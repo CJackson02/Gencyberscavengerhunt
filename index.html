@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenCyber OSINT Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .padded-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .hero-content {
+      background-color: rgba(34, 34, 34, 0.9);
+      color: #f0f0f0;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .hero-warning {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #b30000;
+    }
+
+    .instructions-lock {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cipher-input {
+      padding: 10px;
+      font-size: 1rem;
+      width: 60%;
+      margin-bottom: 1rem;
+      border: 2px solid #555;
+      border-radius: 5px;
+    }
+
+    .unlock-btn {
+      padding: 10px 18px;
+      font-size: 1rem;
+      background-color: #00477a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .unlock-btn:hover {
+      background-color: #0065b3;
+    }
+
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .decoded-instructions {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #222;
+      color: #eee;
+      text-align: center;
+      border-radius: 8px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+    }
+
+    #startBtn {
+      margin-top: 1rem;
+      padding: 10px 16px;
+      font-size: 1rem;
+      background-color: #2596be;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #startBtn:hover {
+      background-color: #1a6f8a;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="gencyberlogo.png" alt="GenCyber Logo" class="logo" />
+      <img src="ualrlogo.jpg" alt="UALR Logo" class="logo" />
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="challenge.html">Challenge</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-container padded-container">
+    <section class="hero-content">
+      <h1 class="hero-title">GenCyber Cyber Scavenger Challenge</h1>
+      <p class="hero-subtitle">
+        The truth is buried beneath layers of deception.<br />
+        Clues are scattered in the shadows of the internet, and your journey begins here.<br />
+        Beware: each answer you give will shape the outcome.
+      </p>
+      <p class="hero-warning">
+        Only those who can see beyond the obvious may proceed.
+      </p>
+    </section>
+  </div>
+
+  <section class="cta-section padded-container">
+    <div class="hero-content">
+      <h2 class="hero-title">Ready to Begin?</h2>
+      <p class="hero-subtitle">Access your briefing and prepare to outwit the digital shadows. Only the keenest minds will succeed.</p>
+      <a href="instructions.html"><button id="startBtn">Unlock Your Mission</button></a>
+    </div>
+  </section>
+
+</script>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="jamesbondtheme.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>

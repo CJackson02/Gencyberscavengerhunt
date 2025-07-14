@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scavenger Hunt Challenge</title>
+</head>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="challenge.css" />
+  <audio id="bg-music" src="jamesbondtheme.mp3" autoplay loop></audio>
+  <script src="audio.js" defer></script>
+</head>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="challenge.html">Challenge</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  <header class="styled-header">
+    <div class="logo-title-card">
+      <div class="logo-container">
+        <img src="gencyberlogo.png" alt="GenCyber Logo" class="logo" />
+        <img src="ualrlogo.jpg" alt="UALR Logo" class="logo" />
+      </div>
+      <h1 class="challenge-title">Scavenger Hunt Challenge</h1>
+    </div>
+  </header>
+  <main id="question-container">
+    <section class="question-section">
+      <h2>Question 1: Archived Homepage Banner</h2>
+      <p>
+        Using the <a href="https://web.archive.org" target="_blank">Wayback Machine</a>, go to <strong>https://niccs.cisa.gov</strong> and load the archived snapshot from
+        <strong>July 3, 2025 at 20:06:55</strong>. What is the main headline banner shown on that page?
+      </p>
+      <input type="text" id="answer1" placeholder="Enter banner headline" />
+      <button onclick="checkAnswer(1)">Submit</button>
+      <p id="feedback1" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-2" style="display: none;">
+      <h2>Question 2: Breach Lookup</h2>
+      <p>
+        Visit <a href="https://haveibeenpwned.com" target="_blank">HaveIBeenPwned</a> and search for the email: <code>test@example.com</code>. What is the <em>most recent</em> known breach listed for this email?
+      </p>
+      <input type="text" id="answer2" placeholder="Enter breach name" />
+      <button onclick="checkAnswer(2)">Submit</button>
+      <p id="feedback2" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-3" style="display: none;">
+      <h2>Question 3: Cyber Job Titles</h2>
+      <p>
+        Go to <a href="https://cyberseek.org" target="_blank">CyberSeek</a> and view the section titled <strong>“Top Job Titles”</strong>. What is the <em>first</em> job title listed in the Cybersecurity Career Pathway diagram?
+      </p>
+      <input type="text" id="answer3" placeholder="Enter job title" />
+      <button onclick="checkAnswer(3)">Submit</button>
+      <p id="feedback3" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-4" style="display: none;">
+      <h2>Question 4: Username Investigation</h2>
+      <p>
+        Search the username <code>Scammer Payback</code> using <a href="https://whatsmyname.app" target="_blank">whatsmyname.app</a>. Which notable platform is listed as having a match?
+      </p>
+      <input type="text" id="answer4" placeholder="Enter platform name" />
+      <button onclick="checkAnswer(4)">Submit</button>
+      <p id="feedback4" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-5" style="display: none;">
+      <h2>Question 5: False Trail — Decoy Clue Extraction</h2>
+      <p>
+        Investigate <strong>Image_1</strong> using <a href="https://exif.tools" target="_blank">EXIF.tools</a>. Based on the GPS coordinates and timestamp in the image, what <strong>named park or landmark</strong> does this location point to?
+      </p>
+      <p>
+      Be careful: this may be a red herring. Still, extract the correct landmark as part of your investigation.
+      </p>
+      <input type="text" id="answer5" placeholder="Enter landmark or park name" />
+      <button onclick="checkAnswer(5)">Submit</button>
+      <p id="feedback5" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-6" style="display: none;">
+      <h2>Question 6: Image Orientation Analysis</h2>
+      <p>
+        Use EXIF data from the <em>lake photo</em> (Image_2) to determine the direction the camera was facing. What is the true bearing (in degrees)?
+      </p>
+      <p>
+        Be sure to round your answer. Format your response like this: <strong>000.00</strong>
+      </p>
+      <input type="text" id="answer6" placeholder="Enter direction in degrees (e.g., 165.19)" />
+      <button onclick="checkAnswer(6)">Submit</button>
+      <p id="feedback6" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-7" style="display: none;">
+      <h2>Question 7: Hidden Resume Clue</h2>
+      <p>
+        A suspicious document labeled <code>omar_new_resume.docx</code> was recovered from the suspect’s cloud drive. Use any metadata extraction tool (e.g., <a href="https://exif.tools" target="_blank">EXIF.tools</a>) to examine the file contents. What internal ZIP file name appears in the document structure?
+      </p>
+      <input type="text" id="answer7" placeholder="Enter internal file name" />
+      <button onclick="checkAnswer(7)">Submit</button>
+      <p id="feedback7" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-8" style="display: none;">
+      <h2>Question 8: Rogue Wi-Fi Activity</h2>
+      <p>
+        A rogue device connected to the Wi-Fi “CyberGuest” on July 4th. Use EXIF metadata from <strong>Image_1</strong> to determine the speed (in km/h) of the device at the time of capture.
+        Round your answer up and use the following format: <code>00.00</code>
+      </p>
+      <input type="text" id="answer8" placeholder="Enter speed in km/h" />
+      <button onclick="checkAnswer(8)">Submit</button>
+      <p id="feedback8" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-9" style="display: none;">
+      <h2>Question 9: Phishing Infrastructure – Domain Investigation</h2>
+      <p>
+        Investigate <code>securenet.net</code> using <a href="https://who.is" target="_blank">who.is</a> or a similar WHOIS service.
+        What is the <strong>primary name server</strong> listed for this domain?
+      </p>
+      <input type="text" id="answer9" placeholder="Enter name server (e.g., ms.securenet.net)" />
+      <button onclick="checkAnswer(9)">Submit</button>
+      <p id="feedback9" class="feedback"></p>
+    </section>
+  
+    <section class="question-section" id="question-10" style="display: none;">
+      <h2>Final Challenge: Suspect Location</h2>
+      <p>
+        Using the GPS coordinates, timestamps, and EXIF metadata from <strong>Image_1</strong> and <strong>Image_2</strong>, along with details from the suspicious domain investigation,
+        determine where the suspect was last known to be on the morning of July 4, 2025.
+      </p>
+      <p>
+        Consider how location data from both images might reveal a travel path or target destination. Clues tied to the domain may also hint at regional focus or activity.
+      </p>
+      <input type="text" id="answer10" placeholder="Enter city or park name" />
+      <button onclick="checkAnswer(10)">Submit</button>
+      <p id="feedback10" class="feedback"></p>
+    </section>
+    
+  </main></body>
+</html>

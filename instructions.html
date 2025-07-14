@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confidential Access</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="audio.js" defer></script>
+  <style>
+    .confidential {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: center;
+    }
+
+    .confidential h1 {
+      color: red;
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+
+    .cipher-input {
+      padding: 10px;
+      font-size: 1rem;
+      width: 60%;
+      max-width: 300px;
+      border: 2px solid #555;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .unlock-btn {
+      padding: 10px 18px;
+      font-size: 1rem;
+      background-color: #00477a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .instructions-content {
+      display: none;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #222;
+      color: #fff;
+      border-radius: 10px;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .instructions-content h2 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+    }
+
+    .instructions-content ul {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .instructions-content li {
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="gencyberlogo.png" alt="GenCyber Logo" class="logo" />
+      <img src="ualrlogo.jpg" alt="UALR Logo" class="logo" />
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="challenge.html">Challenge</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </nav>
+
+  <div class="confidential">
+    <h1>CONFIDENTIAL</h1>
+    <input type="text" id="cipherKey" class="cipher-input" placeholder="Enter cipher key..." />
+    <button class="unlock-btn">Unlock</button>
+    <p id="unlockFeedback" class="feedback"></p>
+  </div>
+
+  <div id="instructions" class="instructions-content">
+    <h2>Mission Brief</h2>
+    <p>
+      Welcome, agent. Your mission is to demonstrate your OSINT skills by uncovering clues scattered across the internet.
+      Each clue is hidden in plain sight, encoded in metadata, forgotten directories, and archived snapshots.
+    </p>
+    <ul>
+      <li>🔍 Investigate metadata in shared photos to locate hidden coordinates.</li>
+      <li>🕵️‍♂️ Use internet archives to track down missing websites.</li>
+      <li>🧠 Spot the patterns in usernames and digital breadcrumbs.</li>
+      <li>📥 Download and analyze suspicious files for clues.</li>
+      <li>🌐 Leverage WHOIS, DNS tools, and breach databases.</li>
+      <li>🚨 Trust nothing. Verify everything. Red herrings are planted to distract you.</li>
+      <li>🧩 Enter your answers carefully. Only the correct inputs will unlock the next challenge.</li>
+      <li>🔒 Remember, the truth is often hidden beneath layers of deception.</li>
+      <li>🗝️ Use your hints located in resources key if needed.</li>
+    </ul>
+    <p>
+      Proceed only if you are prepared to think critically, work as a team, and dig beneath the surface. Your journey begins now.
+    </p>
+  </div>
+
+</body>
+  <audio id="bg-music" src="jamesbondtheme.mp3" autoplay loop></audio>
+  <script src="instructions.js"></script>
+</body>
+</html>

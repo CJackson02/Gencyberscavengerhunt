@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources Vault</title>
+  <link rel="stylesheet" href="resources.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hint-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      margin-top: 10px;
+    }
+
+    .hint-visible {
+      display: block;
+      opacity: 1;
+    }
+
+    .vault-card input:disabled {
+      background-color: #444;
+      color: #ccc;
+    }
+  </style>
+  <script src="audio.js"></script>
+</head>
+<body>
+  <audio id="background-music" src="jamesbondtheme.mp3" loop></audio>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="challenge.html">Challenge</a></li>
+      <li><a href="resources.html" class="active">Resources</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1 class="vault-title">🧠 Resources Vault</h1>
+    <p class="vault-intro">Solve the cybersecurity riddles below to unlock a hint for each challenge question.</p>
+
+    <section class="vault-grid">
+      <!-- Riddles 1-10 -->
+      <div class="vault-card" data-answer="firewall">
+        <h2>Riddle 1</h2>
+        <p>I stand between you and the flame, keeping the intruders out of the game. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #1: What is the headline title on the main banner from NICCS's July 3rd, 2025 Wayback Machine snapshot?</p>
+      </div>
+
+      <div class="vault-card" data-answer="phishing">
+        <h2>Riddle 2</h2>
+        <p>I mimic what you trust the most, to steal your secrets coast to coast. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #2: What is the name of the most recent known breach listed for the email on HaveIBeenPwned.com?</p>
+      </div>
+
+      <div class="vault-card" data-answer="vpn">
+        <h2>Riddle 3</h2>
+        <p>A tunnel unseen, encrypts your stride, hiding your path as you surf and ride. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #3: Visit CyberSeek and identify the top job title shown.</p>
+      </div>
+
+      <div class="vault-card" data-answer="password">
+        <h2>Riddle 4</h2>
+        <p>I'm your secret, short or long, weak or strong. Guard me well, or things go wrong. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #4: Which notable platform has a result for the username “Scammer Payback” on whatsmyname.app?</p>
+      </div>
+
+      <div class="vault-card" data-answer="rootkit">
+        <h2>Riddle 5</h2>
+        <p>Deep within the system’s core, I hide in code and so much more. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #5: What geographic location is closest to the GPS data from the mountain image using EXIF.tools?</p>
+      </div>
+
+      <div class="vault-card" data-answer="spoofing">
+        <h2>Riddle 6</h2>
+        <p>I fake my name to look the same, but trick you is my only aim. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #6: What direction (in degrees) was the lake photo taken facing?</p>
+      </div>
+
+      <div class="vault-card" data-answer="honeypot">
+        <h2>Riddle 7</h2>
+        <p>I look like bait to the unaware, but I’m a trap for those who dare. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #7: From Operation Endgame reporting, what malware family was associated with the “IcedID” infrastructure takedown?</p>
+      </div>
+
+      <div class="vault-card" data-answer="backdoor">
+        <h2>Riddle 8</h2>
+        <p>Once you trust me, I’m hard to ignore. I sneak right in through a hidden door. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #8: What speed (in km/h) was the rogue device traveling when the photo was taken based on GPS metadata?</p>
+      </div>
+
+      <div class="vault-card" data-answer="ddos">
+        <h2>Riddle 9</h2>
+        <p>I flood with traffic, break your stride, a million bots on every side. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #9: What is the listed name server for the fake domain “secure-careers.net” on who.is?</p>
+      </div>
+
+      <div class="vault-card" data-answer="zero day">
+        <h2>Riddle 10</h2>
+        <p>Unknown to all, I sit and wait, till one day I reveal your fate. What am I?</p>
+        <input type="text" placeholder="Your answer..." />
+        <button class="unlock-btn">Unlock Hint</button>
+        <p class="hint-content">Hint for Challenge #10: What park or city do the combined GPS clues point to on the morning of July 4th, 2025?</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="resources.js"></script>
+  <script>
+    document.querySelectorAll('.unlock-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.vault-card');
+        const input = card.querySelector('input');
+        const hint = card.querySelector('.hint-content');
+        const correctAnswer = card.getAttribute('data-answer');
+
+        if (input.value.trim().toLowerCase() === correctAnswer) {
+          hint.classList.add('hint-visible');
+          input.disabled = true;
+        } else {
+          alert('❌ Incorrect. Try again.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
