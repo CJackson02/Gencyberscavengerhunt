@@ -143,5 +143,25 @@
       });
     });
   </script>
+
+  <div id="audio-toggle-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+    <button id="audio-toggle" style="background-color: #111; color: #fff; border: 1px solid #888; padding: 10px; border-radius: 5px; cursor: pointer;">
+      🔇 Mute Music
+    </button>
+  </div>
+  <script>
+    const bgMusic = document.getElementById('background-music');
+    const toggleButton = document.getElementById('audio-toggle');
+
+    toggleButton.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        toggleButton.textContent = '🔇 Mute Music';
+      } else {
+        bgMusic.pause();
+        toggleButton.textContent = '🔊 Unmute Music';
+      }
+    });
+  </script>
 </body>
 </html>

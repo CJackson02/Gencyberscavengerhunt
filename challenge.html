@@ -4,12 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scavenger Hunt Challenge</title>
-</head>
-  <script defer src="script.js"></script>
+  <style>
+    #audio-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    #toggle-audio {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #222;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    #toggle-audio:hover {
+      background-color: #444;
+    }
+  </style>
+  <script defer src="script.js" id="main-script"></script>
   <link rel="stylesheet" href="challenge.css" />
-  <audio id="bg-music" src="jamesbondtheme.mp3" autoplay loop></audio>
-  <script src="audio.js" defer></script>
-</head>
 </head>
 <body>
   <nav class="navbar">
@@ -142,5 +160,31 @@
       <p id="feedback10" class="feedback"></p>
     </section>
     
-  </main></body>
+  </main>
+  <div id="audio-controls">
+    <button id="toggle-audio">🔊</button>
+  </div>
+
+</div>
+
+  <audio id="background-music" src="jamesbondtheme.mp3" autoplay loop></audio>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("background-music");
+      const toggleButton = document.getElementById("toggle-audio");
+
+      if (toggleButton && audio) {
+        toggleButton.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+            toggleButton.textContent = "🔊";
+          } else {
+            audio.pause();
+            toggleButton.textContent = "🔇";
+          }
+        });
+      }
+    });
+  </script>
+</body>
 </html>

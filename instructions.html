@@ -116,8 +116,29 @@
     </p>
   </div>
 
-</body>
   <audio id="bg-music" src="jamesbondtheme.mp3" autoplay loop></audio>
+  <button id="muteToggle" style="position: fixed; bottom: 20px; right: 20px; z-index: 999; background: #00477a; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+    🔊
+  </button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Ensure audio.js is loaded after DOM elements
+      const bgMusic = document.getElementById("bg-music");
+      const muteToggle = document.getElementById("muteToggle");
+
+      if (muteToggle && bgMusic) {
+        muteToggle.addEventListener("click", () => {
+          if (bgMusic.paused) {
+            bgMusic.play();
+            muteToggle.textContent = "🔊";
+          } else {
+            bgMusic.pause();
+            muteToggle.textContent = "🔇";
+          }
+        });
+      }
+    });
+  </script>
   <script src="instructions.js"></script>
 </body>
 </html>

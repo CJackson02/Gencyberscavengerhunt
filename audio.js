@@ -17,4 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
       sessionStorage.setItem("bgMusicTime", audio.currentTime);
     }, 1000);
+  
+    // Mute toggle functionality
+    const toggleBtn = document.getElementById("mute-toggle");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        audio.muted = !audio.muted;
+        toggleBtn.textContent = audio.muted ? "🔇" : "🔊";
+      });
+    }
   });
