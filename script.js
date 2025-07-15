@@ -3,7 +3,7 @@
 // Acceptable answers per question (case insensitive, trimmed)
 const correctAnswers = {
   1: "explore interactive cybersecurity tools",
-  2: "operation endgame",
+  2: "operation endgame 2.0",
   3: "cybersecurity specialist",
   4: "youtube",
   5: "pinnacle mountain",
