@@ -10,7 +10,7 @@ const correctAnswers = {
   6: "165.19",
   7: ".xml",
   8: "26.07",
-  9: "Network Solutions",
+  9: "network solutions",
   10: "lake hamilton"
 };
 
