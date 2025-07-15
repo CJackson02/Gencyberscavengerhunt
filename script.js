@@ -3,14 +3,14 @@
 // Acceptable answers per question (case insensitive, trimmed)
 const correctAnswers = {
   1: "explore interactive cybersecurity tools",
-  2: "operation endgame",
+  2: "operation endgame 2.0",
   3: "cybersecurity specialist",
   4: "youtube",
   5: "pinnacle mountain",
   6: "165.19",
   7: ".xml",
   8: "26.07",
-  9: "network solutions", // already lowercase for match
+  9: "network solutions", 
   10: "lake hamilton"
 };
 
