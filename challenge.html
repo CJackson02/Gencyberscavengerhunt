@@ -37,6 +37,15 @@
       <li><a href="challenge.html">Challenge</a></li>
       <li><a href="resources.html">Resources</a></li>
     </ul>
+  </nav>
+  <div id="cipher-lock" style="text-align: center; margin: 2rem;">
+    <h2>🔒 Locked</h2>
+    <p>Please enter the password to unlock the challenge:</p>
+    <input type="text" id="cipherInput" placeholder="Enter password" />
+    <button onclick="submitPassword()">Unlock</button>
+    <p id="feedback" class="feedback"></p>
+  </div>
+  <div id="challenge-content" style="display:none;">
   <header class="styled-header">
     <div class="logo-title-card">
       <div class="logo-container">
@@ -161,13 +170,13 @@
     </section>
     
   </main>
+
+  <audio id="background-music" src="jamesbondtheme.mp3" autoplay loop></audio>
+  </div>
   <div id="audio-controls">
     <button id="toggle-audio">🔊</button>
   </div>
 
-</div>
-
-  <audio id="background-music" src="jamesbondtheme.mp3" autoplay loop></audio>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const audio = document.getElementById("background-music");
@@ -186,5 +195,33 @@
       }
     });
   </script>
+<script>
+  function submitPassword() {
+    const input = document.getElementById("cipherInput").value.trim();
+    const correctPassword = "endgame";
+    const feedback = document.getElementById("feedback");
+
+    if (input === correctPassword) {
+      sessionStorage.setItem("accessGranted", "true");
+      document.getElementById("cipher-lock").style.display = "none";
+      document.getElementById("challenge-content").style.display = "block";
+      feedback.textContent = "✅ Access granted!";
+      feedback.style.color = "green";
+    } else {
+      feedback.textContent = "❌ Incorrect password.";
+      feedback.style.color = "red";
+    }
+  }
+
+  // On load, check if already unlocked
+  window.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("accessGranted") === "true") {
+      document.getElementById("cipher-lock").style.display = "none";
+      document.getElementById("challenge-content").style.display = "block";
+    } else {
+      document.getElementById("challenge-content").style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
