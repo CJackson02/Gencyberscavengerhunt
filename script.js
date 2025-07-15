@@ -3,14 +3,14 @@
 // Acceptable answers per question (case insensitive, trimmed)
 const correctAnswers = {
   1: "explore interactive cybersecurity tools",
-  2: "operation endgame 2.0",
+  2: "operation endgame",
   3: "cybersecurity specialist",
   4: "youtube",
   5: "pinnacle mountain",
   6: "165.19",
   7: ".xml",
   8: "26.07",
-  9: "network solutions",
+  9: "network solutions", // already lowercase for match
   10: "lake hamilton"
 };
 
@@ -45,7 +45,7 @@ function checkAnswer(qNum) {
 
   attempts[qNum] = (attempts[qNum] || 0) + 1;
 
-  if (userAnswer === correctAnswers[qNum]) {
+  if (userAnswer === correctAnswers[qNum].toLowerCase()) {
     feedback.textContent = "Correct!";
     feedback.className = "feedback correct";
     revealNext(qNum);
